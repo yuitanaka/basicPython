@@ -28,6 +28,13 @@ else:
             printKeys += str(k) + '\n'
         pyperclip.copy(printKeys)
         print('キーワード一覧をコピーしました')
+    #キーワードの削除
+    elif sys.argv[1] == 'delete':
+        keys = list(mcb_shelf)
+        if sys.argv[2] in keys:
+           del mcb_shelf[sys.argv[2]]
+        else:
+            print('キーワードがありません')
     #キーワードの読み込み
     elif len(sys.argv) == 2:
         keys = list(mcb_shelf.keys())
